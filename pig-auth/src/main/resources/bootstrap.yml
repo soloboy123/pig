@@ -1,0 +1,19 @@
+server:
+  port: 3000
+
+spring:
+  application:
+    name: pig-auth
+  profiles:
+    active: dev
+  cloud:
+      nacos:
+        discovery:
+          server-addr: 39.98.140.57:8848
+        config:
+          server-addr: 39.98.140.57:8848
+          file-extension: yml
+  main:
+    allow-bean-definition-overriding: true
+
+

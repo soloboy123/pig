@@ -1,0 +1,25 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: pig-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 39.98.140.57:8848
+      config:
+        server-addr: 39.98.140.57:8848
+        file-extension: yml
+
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+
+
+logging:
+  level:
+    org.springframework.cloud.gateway: trace
+
+
