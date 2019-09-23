@@ -35,9 +35,9 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 @SpringCloudApplication
 @EnableDiscoveryClient
 @RefreshScope
-public class PigAdminApplication {
+public class PigUpmsApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(PigAdminApplication.class, args);
+		SpringApplication.run(PigUpmsApplication.class, args);
 	}
 
 }

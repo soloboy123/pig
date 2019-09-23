@@ -58,11 +58,7 @@
 			<artifactId>pig-common-log</artifactId>
 			<version>2.4.2</version>
 		</dependency>
-		<!--配置中心客户端-->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
-		</dependency>
+
 		<!--mybatis-->
 		<dependency>
 			<groupId>com.baomidou</groupId>
