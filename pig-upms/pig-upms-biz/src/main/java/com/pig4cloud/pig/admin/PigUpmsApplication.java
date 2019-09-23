@@ -30,7 +30,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
  * @date 2018年06月21日
  * 用户统一管理系统
  */
-//@EnablePigResourceServer
+@EnablePigResourceServer
 @EnablePigFeignClients
 @SpringCloudApplication
 @EnableDiscoveryClient

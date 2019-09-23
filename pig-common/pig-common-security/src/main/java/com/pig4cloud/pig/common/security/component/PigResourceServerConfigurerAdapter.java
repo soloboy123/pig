@@ -77,11 +77,14 @@ public class PigResourceServerConfigurerAdapter extends ResourceServerConfigurer
 		DefaultAccessTokenConverter accessTokenConverter = new DefaultAccessTokenConverter();
 		UserAuthenticationConverter userTokenConverter = new PigUserAuthenticationConverter();
 		accessTokenConverter.setUserTokenConverter(userTokenConverter);
-
-	/*	remoteTokenServices.setRestTemplate(lbRestTemplate);
-		remoteTokenServices.setAccessTokenConverter(accessTokenConverter);*/
+		RemoteTokenServices remoteTokenServices=new RemoteTokenServices();
+		remoteTokenServices.setCheckTokenEndpointUrl("http://pig-auth/oauth/check_token");
+		remoteTokenServices.setClientId("test");
+		remoteTokenServices.setClientSecret("test");
+		remoteTokenServices.setRestTemplate(lbRestTemplate);
+		remoteTokenServices.setAccessTokenConverter(accessTokenConverter);
 		resources.authenticationEntryPoint(resourceAuthExceptionEntryPoint)
-			.accessDeniedHandler(pigAccessDeniedHandler);
-//			.tokenServices(remoteTokenServices);
+			.accessDeniedHandler(pigAccessDeniedHandler)
+			.tokenServices(remoteTokenServices);
 	}
 }
