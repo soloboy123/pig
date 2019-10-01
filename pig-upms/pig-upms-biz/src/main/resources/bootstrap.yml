@@ -16,6 +16,3 @@ spring:
           server-addr: 39.98.140.57:8848
           file-extension: yml
 
-jasypt:
-  encryptor:
-    password: foo #根密码
