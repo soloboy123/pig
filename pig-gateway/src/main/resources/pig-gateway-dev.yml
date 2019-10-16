@@ -1,0 +1,49 @@
+
+spring:
+  redis:
+    host: 39.98.140.57
+    password: zxl123456ZXL
+  cloud:
+    gateway:
+      locator:
+        enabled: true
+        lower-case-service-id: true
+      routes:
+        # 认证中心
+        - id: pig-auth
+          uri: lb://pig-auth
+          predicates:
+            - Path=/auth/**
+          filters:
+          # 前端密码解密
+            # - PasswordDecoderFilter
+        #UPMS 模块
+        - id: pig-upms
+          uri: lb://pig-upms
+          order: 10000
+          predicates:
+            - Path=/upms/**
+          filters:
+            - Retry=5
+            # - StripPrefix=1
+            # - name: RequestRateLimiter
+            #   args:
+            #     key-resolver: '#{@remoteAddrKeyResolver}'
+            #     redis-rate-limiter.replenishRate: 1
+            #     redis-rate-limiter.burstCapacity: 2
+        # 代码生成模块
+        - id: pig-codegen
+          uri: lb://pig-codegen
+          predicates:
+            - Path=/gen/**
+
+
+security:
+  encode:
+    # 前端密码密钥，必须16位
+    key: 'thanks,pig4cloud'
+
+# 不校验验证码终端
+ignore:
+  clients:
+    - test

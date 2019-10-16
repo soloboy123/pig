@@ -1,0 +1,21 @@
+
+# 数据源
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: zxl123456ZXL
+    url: jdbc:mysql://39.98.140.57:3306/pig?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+  redis:
+    host: 39.98.140.57
+    password: zxl123456ZXL
+
+ignore:
+  urls:
+    - /actuator/**
+    - /user/info/**
+    - /log/**
+    - /v2/api-docs
+    - /webjars/**
+    - /swagger-resources/**

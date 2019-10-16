@@ -21,5 +21,6 @@ spring:
 logging:
   level:
     org.springframework.cloud.gateway: trace
+    com.windmt.filter: debug
 
 
