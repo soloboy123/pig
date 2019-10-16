@@ -1,0 +1,19 @@
+server:
+  port: 5002
+
+spring:
+  application:
+    name: pig-zipkin
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 39.98.140.57:8848
+      config:
+        server-addr: 39.98.140.57:8848
+        file-extension: yml
+
+# 数据源

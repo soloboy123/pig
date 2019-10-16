@@ -1,0 +1,17 @@
+server:
+  port: 5001
+
+spring:
+  application:
+    name: pig-monitor
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 39.98.140.57:8848
+      config:
+        server-addr: 39.98.140.57:8848
+        file-extension: yml
